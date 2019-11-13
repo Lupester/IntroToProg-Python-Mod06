@@ -8,7 +8,7 @@
 # RRoot,1.1.2030,Created started script
 # RRoot,1.1.2030,Added code to complete assignment 5
 # RRoot,1.1.2030,Fixed bug by clearing the list before it was refilled
-# GFlores,11.11.2019,Modified code to complete assignment 6
+# GFlores,11.12.2019,Modified code to complete assignment 6
 # ------------------------------------------------------------------------ #
 
 # Data ------------------------------------------------------------------- #
@@ -109,9 +109,9 @@ class IO:
         print("*******************************************")
         print()  # Add an extra line for looks
 
-# Step 1 - When the program starts, Load data from ToDoFile.txt.
+    # Step 1 - When the program starts, Load data from ToDoFile.txt.
 FileProcessor.ReadFileDataToList(strFileName, lstTable)  # read file data
-# Step 2 - Display a menu of choices to the user
+    # Step 2 - Display a menu of choices to the user
 while (True):
     IO.OutputMenuItems()  # Shows menu
     strChoice = IO.InputMenuChoice()  # Get menu option
@@ -125,7 +125,7 @@ while (True):
         # Step 3.2.a - Ask user for new task and priority
         # ToDo: Place IO code in a new function
         strTask, strPriority = IO.GetTaskDetails()  # Created New Function 11-10-2019
-        FileProcessor.AddRowToList(strTask, strPriority, lstTable)  # Created 11-10-2019
+        FileProcessor.AddRowToList(strTask, strPriority, lstTable)  # Created New Fuction 11-10-2019
         IO.ShowCurrentItemsInList(lstTable)  # Show current data in the list/table
         continue  # to show the menu
     # Step 3.3 - Remove a new item to the list/Table
@@ -133,7 +133,7 @@ while (True):
         # Step 3.3.a - Ask user for item and prepare searching while loop
         strKeyToRemove = input("Which TASK would you like removed? - ")  # get task user wants deleted
         blnItemRemoved = False  # Create a boolean Flag for loop
-        blnItemRemoved, lstTable = FileProcessor.RemoveLine(strKeyToRemove)  # Created new Function 11-10-2019
+        blnItemRemoved, lstTable = FileProcessor.RemoveLine(strKeyToRemove)  # Created New Function 11-10-2019
         if (blnItemRemoved == True):
             print("The task was removed.")
         else:
@@ -161,7 +161,7 @@ while (True):
             input("File data was NOT reloaded! Press the [Enter] key to return to menu.")
             IO.ShowCurrentItemsInList(lstTable)  # Show current data in the list/table
         continue  # to show the menu
-    # Step 3.6 - Exit the program
+    # Step 3.5 - Exit the program
     elif (strChoice == '6'):
         break  # and Exit
 # Main Body of Script  ---------------------------------------------------- #
